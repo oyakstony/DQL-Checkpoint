@@ -1,16 +1,18 @@
-select * from customer_1
+select * from customer_1;
 
-select product_name, category from product where product_price between 5000 and 10000
+select product_name, category from product where product_price between 5000 and 10000;
 
-select * from product order by product_price desc
+select * from product order by product_price desc;
 
-select count(*) orders, avg(total_amount), max(total_amount), min(total_amount)from orders
+select count(*) orders, avg(total_amount), max(total_amount), min(total_amount)from orders;
 
-select count(*) product_id from orders
+select product_id, count(*) as number_of_order from orders 
+group by product_id;
 
-select from orders where customer_id >=2
+select customer_id , count(*) as customer_order from orders 
+group by customer_id 
+having count(*)>2;
 
-select count(* ) from orders order_date
 
 alter table orders add column order_id serial
 
